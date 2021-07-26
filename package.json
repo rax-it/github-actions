@@ -1,0 +1,10 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "description": "actions",
+  "main": "index.js",
+  "repository": "git@github.com:rax-it/github-actions.git",
+  "author": "Rakshit Verma <rakshit.verma@salesforce.com>",
+  "license": "MIT",
+  "private": false
+}
