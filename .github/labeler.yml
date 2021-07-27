@@ -1,0 +1,3 @@
+# - any: ['packages/**/src/**/*', '!packages/**/src/raml-artifacts/**/*', '!packages/**/src/overrides/**/*']
+auto-approve:
+- any: ['src/**/*', '!src/overrides/**/*']
