@@ -27,6 +27,7 @@ jobs:
     needs: handroll
     runs-on: ubuntu-latest
     steps:
+      - run: echo $(env)
       - uses: actions/labeler@v3
         if: ${{ env.changes_exist == true }}
         with:
