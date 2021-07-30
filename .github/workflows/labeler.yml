@@ -3,12 +3,12 @@ on:
 - pull_request_target
 
 jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/labeler@v3
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+  # triage:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/labeler@v3
+  #     with:
+  #       repo-token: "${{ secrets.GITHUB_TOKEN }}"
   handroll:
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +20,16 @@ jobs:
               else
                 echo "changes_exist=true" >> $GITHUB_ENV
               fi
+      # - uses: actions/labeler@v3
+      #   with:
+      #     repo-token: "${{ secrets.GITHUB_TOKEN }}"
+  triage:
+    needs: handroll
+    if: ${{ env.changes_exist === true }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triaging"
       - uses: actions/labeler@v3
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
+
