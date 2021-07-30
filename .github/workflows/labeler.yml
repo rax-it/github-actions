@@ -16,9 +16,9 @@ jobs:
       - run: echo $(pwd)
       - run: |
               if git diff main -S TODO: --no-index; then
-                echo "changes_exist=true" >> $GITHUB_ENV
-              else
                 echo "changes_exist=false" >> $GITHUB_ENV
+              else
+                echo "changes_exist=true" >> $GITHUB_ENV
               fi
       - uses: actions/labeler@v3
         with:
