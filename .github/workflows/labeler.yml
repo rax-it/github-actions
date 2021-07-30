@@ -26,8 +26,8 @@ jobs:
   triage:
     needs: handroll
     runs-on: ubuntu-latest
-    if: ${{ env.changes_exist === true }}
     steps:
+      if: ${{ env.changes_exist === true }}
       - run: echo "Triaging"
       - uses: actions/labeler@v3
         with:
