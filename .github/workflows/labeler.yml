@@ -12,7 +12,8 @@ jobs:
   handroll:
     runs-on: ubuntu-latest
     steps:
-      - run:  echo "Checking for changes"
+      - run: echo "Checking for changes"
+      - run: echo $(pwd)
       - run: |
               if git diff main -S TODO:; then
                 echo "changes_exist=true" >> $GITHUB_ENV
