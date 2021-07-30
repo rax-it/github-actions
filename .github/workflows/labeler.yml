@@ -27,9 +27,8 @@ jobs:
     needs: handroll
     runs-on: ubuntu-latest
     steps:
-      - name: Triage 
-        - uses: actions/labeler@v3
-          if: ${{ env.changes_exist === true }}
-          with:
-            repo-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: actions/labeler@v3
+        if: ${{ env.changes_exist === true }}
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
