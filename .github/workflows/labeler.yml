@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run:  echo "Checking for changes"
+      - run: |
+              if git diff main -S TODO:; then
+                echo "changes_exist=true" >> $GITHUB_ENV
+              else
+                echo "changes_exist=false" >> $GITHUB_ENV
+              fi
       - uses: actions/labeler@v3
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
