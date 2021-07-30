@@ -21,6 +21,7 @@ jobs:
                 echo "changes_exist=true" >> $GITHUB_ENV
               fi
       - run: echo $(env)
+      - run: echo $(env.changes_exist)
       - uses: actions/labeler@v3
         if: ${{ env.changes_exist == true }}
         with:
